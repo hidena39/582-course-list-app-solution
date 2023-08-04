@@ -23,7 +23,13 @@ describe("CourseItem.vue", () => {
     expect(wrapper.find("[data-test-id='5']").text()).toBe("id: 0");
   });
 
-  // it("emits an add course event", () => {});
+  it("emits an add course event", async () => {
+    const wrapper = shallowMount(CourseItem);
+    const buttonText = "Button";
+    wrapper.find("[data-test-id='6']").trigger("click");
+    expect(wrapper.find("[data-test-id='6']")).toBe(buttonText);
+    // console.log(wrapper.emitted().sendAdd);
+  });
 
   // it("emits a remove course event", () => {});
 
