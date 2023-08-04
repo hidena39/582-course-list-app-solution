@@ -14,12 +14,14 @@
     @removeCourse="removeCourse"
   >
   </CourseList>
+  <TwoWayBinding></TwoWayBinding>
 </template>
 
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
 // import CourseItem from "./components/CourseItem.vue";
 import CourseList from "./components/CourseList.vue";
+import TwoWayBinding from "./components/two-way-binding.vue";
 
 export default {
   name: "App",
@@ -108,6 +110,7 @@ export default {
     // HelloWorld,
     // CourseItem,
     CourseList,
+    TwoWayBinding,
   },
   methods: {
     addCourse(id) {

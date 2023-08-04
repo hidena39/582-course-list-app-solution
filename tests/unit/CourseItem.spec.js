@@ -25,10 +25,8 @@ describe("CourseItem.vue", () => {
 
   it("emits an add course event", async () => {
     const wrapper = shallowMount(CourseItem);
-    const buttonText = "Button";
-    wrapper.find("[data-test-id='6']").trigger("click");
-    expect(wrapper.find("[data-test-id='6']")).toBe(buttonText);
-    // console.log(wrapper.emitted().sendAdd);
+    const buttonText = "Add Course";
+    expect(wrapper.find("[data-test-id='6']").text()).toBe(buttonText);
   });
 
   // it("emits a remove course event", () => {});
