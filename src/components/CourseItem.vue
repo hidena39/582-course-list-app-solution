@@ -3,7 +3,7 @@
     <h2>{{ course.name }}</h2>
     <p>{{ course.description }}</p>
     <ul>
-      <li>credits : {{ course.credits }}</li>
+      <li data-test-id="1">credits : {{ course.credits }}</li>
       <li>hours: {{ course.hours }}</li>
       <li>location: {{ course.location }}</li>
       <li>
