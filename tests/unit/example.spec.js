@@ -1,5 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import HelloWorld from "@/components/HelloWorld.vue";
+import CourseItem from "@/components/CourseItem.vue";
 
 describe("HelloWorld.vue", () => {
   it("renders props.msg when passed", () => {
@@ -9,4 +10,24 @@ describe("HelloWorld.vue", () => {
     });
     expect(wrapper.text()).toMatch(msg);
   });
+});
+
+describe("CourseItem.vue", () => {
+  it("renders the props", () => {
+    const msg = "new message";
+    co;
+    const wrapper = shallowMount(HelloWorld, {
+      props: { msg },
+    });
+    expect(wrapper.text()).toMatch(msg);
+  });
+
+  it("emits an add course event", () => {});
+
+  it("emits a remove course event", () => {});
+
+  it("displays the add button if available and it was not selected", () => {});
+
+  it("hides the add button if not available or selected", () => {});
+  it("", () => {});
 });
