@@ -15,6 +15,13 @@
   >
   </CourseList>
   <TwoWayBinding></TwoWayBinding>
+  <div class="space"></div>
+
+  Outside:app.vue{{ inputText }}
+  <input type="text" v-model="inputText" />
+  <FormComponent v-model="inputText"></FormComponent>
+  <SampleModel v-model="inputText"></SampleModel>
+  <div class="space"></div>
 </template>
 
 <script>
@@ -22,6 +29,8 @@
 // import CourseItem from "./components/CourseItem.vue";
 import CourseList from "./components/CourseList.vue";
 import TwoWayBinding from "./components/two-way-binding.vue";
+import FormComponent from "./components/FormComponent.vue";
+import SampleModel from "./components/SampleModel.vue";
 
 export default {
   name: "App",
@@ -104,6 +113,7 @@ export default {
           enrollment: 20,
         },
       ],
+      inputText: "",
     };
   },
   components: {
@@ -111,6 +121,8 @@ export default {
     // CourseItem,
     CourseList,
     TwoWayBinding,
+    FormComponent,
+    SampleModel,
   },
   methods: {
     addCourse(id) {
@@ -135,5 +147,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.space {
+  margin-top: 100px;
 }
 </style>
