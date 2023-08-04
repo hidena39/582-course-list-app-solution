@@ -18,6 +18,9 @@ describe("CourseItem.vue", () => {
     expect(wrapper.find("h2").text()).toBe("Course Name");
     expect(wrapper.find("p").text()).toBe("Lorem ipsum dolor");
     expect(wrapper.find("[data-test-id='1']").text()).toBe("credits : 0");
+    expect(wrapper.find("[data-test-id='2']").text()).toBe("hours: 0");
+    expect(wrapper.find("[data-test-id='3']").text()).toBe("location: online");
+    expect(wrapper.find("[data-test-id='5']").text()).toBe("id: 0");
   });
 
   // it("emits an add course event", () => {});

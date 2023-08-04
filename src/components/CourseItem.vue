@@ -4,13 +4,13 @@
     <p>{{ course.description }}</p>
     <ul>
       <li data-test-id="1">credits : {{ course.credits }}</li>
-      <li>hours: {{ course.hours }}</li>
-      <li>location: {{ course.location }}</li>
-      <li>
+      <li data-test-id="2">hours: {{ course.hours }}</li>
+      <li data-test-id="3">location: {{ course.location }}</li>
+      <li data-test-id="4">
         enrollment: {{ course.enrollment }}
         <span class="status">{{ enrollmentStatus }}</span>
       </li>
-      <li>id: {{ course.id }}</li>
+      <li data-test-id="5">id: {{ course.id }}</li>
     </ul>
 
     <button v-if="!isFull && !isAdded" @click="sendAdd">Add Course</button>
