@@ -28,6 +28,7 @@ describe("CourseItem.vue", () => {
     const buttonText = "Add Course";
     expect(wrapper.find("[data-test-id='6']").text()).toBe(buttonText);
   });
+  //testing
 
   // it("emits a remove course event", () => {});
 
