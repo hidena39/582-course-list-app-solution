@@ -23,7 +23,8 @@ describe("CourseItem.vue", () => {
     expect(wrapper.find("[data-test-id='5']").text()).toBe("id: 0");
   });
 
-  it("shows the add course button", () => {
+  //add
+  it("shows the add course button if available and it was not selected", () => {
     const wrapper = shallowMount(CourseItem);
     const buttonText = "Add Course";
     expect(wrapper.find("[data-test-id='6']").text()).toBe(buttonText);
@@ -34,8 +35,20 @@ describe("CourseItem.vue", () => {
     console.log(wrapper.emitted().addCourse);
     expect(wrapper.emitted().addCourse[0][0]).toBe(2);
   });
+  it("hides the add button if already selected", async () => {
+    const wrapper = shallowMount(CourseItem);
+    await wrapper.setData({ isAdded: true });
+    expect(wrapper.find("[data-test-id='6']").exists()).toBe(false);
+  });
+  // it("hides the add button if not available", async () => {
+  //   const wrapper = shallowMount(CourseItem);
+  //   await wrapper.setData({ enrollmentStatus(full) });
+  //   console.log(wrapper.vm.enrollment);
+  //   expect(wrapper.vm.find("[data-test-id='6']").exists()).toBe(false);
+  // });
 
-  it("shows a remove course event", async () => {
+  //remove
+  it("shows a remove course button if it is already selected", async () => {
     const wrapper = shallowMount(CourseItem);
     await wrapper.setData({ isAdded: true });
     const buttonText = "Remove Course";
@@ -48,11 +61,4 @@ describe("CourseItem.vue", () => {
     console.log(wrapper.emitted().removeCourse);
     expect(wrapper.emitted().removeCourse[0][0]).toBe(2);
   });
-
-  // it("displays the add button if available and it was not selected", () => {});
-
-  // it("hides the add button if not available or selected", () => {
-  //  await wrapper.setData({ enrollment: 21 });
-  //});
-  // it("", () => {});
 });

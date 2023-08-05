@@ -47,7 +47,7 @@ export default {
           location: "Online",
           instructor: "John Doe",
           id: 1,
-          enrollment: 10,
+          enrollment: 1,
         },
         {
           name: "React.js",
