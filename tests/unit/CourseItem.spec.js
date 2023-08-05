@@ -22,6 +22,17 @@ describe("CourseItem.vue", () => {
     expect(wrapper.find("[data-test-id='3']").text()).toBe("location: online");
     expect(wrapper.find("[data-test-id='5']").text()).toBe("id: 0");
   });
+  it("shows right enrollment status", async () => {
+    const course = {
+      enrollment: 10,
+    };
+    const wrapper = shallowMount(CourseItem, {
+      props: { course },
+    });
+    expect(wrapper.find("[data-test-id='4']").text()).toBe(
+      "enrollment: 10 available to join"
+    );
+  });
 
   //add
   it("shows the add course button if available and it was not selected", () => {
@@ -40,12 +51,22 @@ describe("CourseItem.vue", () => {
     await wrapper.setData({ isAdded: true });
     expect(wrapper.find("[data-test-id='6']").exists()).toBe(false);
   });
+
   // it("hides the add button if not available", async () => {
   //   const wrapper = shallowMount(CourseItem);
-  //   await wrapper.setData({ enrollmentStatus(full) });
-  //   console.log(wrapper.vm.enrollment);
-  //   expect(wrapper.vm.find("[data-test-id='6']").exists()).toBe(false);
+  //   await wrapper.setData({ isFull: true });
+  //   expect(wrapper.find("[data-test-id='6']").exists()).toBe(false);
   // });
+
+  it("hides the add button if not available", async () => {
+    const course = {
+      enrollment: 20,
+    };
+    const wrapper = shallowMount(CourseItem, {
+      props: { course },
+    });
+    expect(wrapper.find("[data-test-id='6']").exists()).toBe(false);
+  });
 
   //remove
   it("shows a remove course button if it is already selected", async () => {
