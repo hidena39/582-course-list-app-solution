@@ -16,7 +16,9 @@
     <button data-test-id="6" v-if="!isFull && !isAdded" @click="sendAdd">
       Add Course
     </button>
-    <button v-else-if="!isFull" @click="sendRemove">Remove Course</button>
+    <button data-test-id="7" v-else-if="!isFull" @click="sendRemove">
+      Remove Course
+    </button>
   </div>
 </template>
 
@@ -28,7 +30,7 @@ export default {
       type: Object,
       default() {
         return {
-          id: 0,
+          id: 2,
           name: "Course Name",
           credits: 0,
           hours: 0,
