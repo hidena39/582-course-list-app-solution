@@ -6,7 +6,7 @@ describe("CourseList.vue", () => {
   it("emits addCourse event when Add Course button is clicked in CourseItem.vue", async () => {
     const courses = [
       {
-        id: 8,
+        id: 2,
       },
     ];
     const wrapper = shallowMount(CourseList, {
